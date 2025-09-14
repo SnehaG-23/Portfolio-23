@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    margin:0;     
+}
+:root{
+    --first-color:rgb(36, 35, 36);
+    --second-color:rgb(255, 255, 255);
+    --third-color:rgb(4, 55, 109);
+    --transition: all 0.5s;    
+}
+body{
+    margin:0;
+    width:100%;
+    Height:100vh;
+    background: url(./images/hero.jpeg) fixed center/cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#nav-check{
+    position:fixed;
+    display:none;
+}
+#nav-check:checked ~.navigation{
+    transform: translateY(0%);
+}
+header{
+    position:fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index:3;
+    height:100vh;
+    width:100%;    
+}
+.navigation{
+    margin-top:0;
+    width:0 auto;
+    height:100vh;
+    background:black;
+    font-size:2rem;
+    text-transform:uppercase;
+    transform: translateY(-100%);
+    transition: all 1s;
+} 
+.snowflake{
+    animation-name:fall;
+    position:absolute;
+    top:-10px;
+    color:white;
+    font-size:1em;
+    user-select:none;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+}
+@keyframes fall{
+    from{transform:translateY(0) rotate(0deg); opacity: 1;}
+    to{transform:translateY(100vh) rotate(360deg); opacity: 0.3;}
+}
+.nav-links{
+    padding:2rem;         
+    list-style: none;
+}
+.nav-links li{
+    text-align: center;
+    padding: 1rem;
+}            
+.nav a{
+    text-decoration: none;
+    color:var(--second-color);   
+}
+.nav li{
+    color:White;
+    padding:25px;  
+}
+.menu-bar{  
+    fill:white;
+    margin-top:15px;
+    margin-left:15px;
+    position:fixed;
+    cursor:pointer;
+    .menu-btn{
+        border: none;    
+        :hover{
+            background: var(--third-color);
+        }
+    }
+
+}
+/*-------Home-----*/
+.home{
+    position:fixed;
+    width:100%;
+    height:60hv;
+    text-align:center;  
+}
+.hero-page{
+    margin:20% 10%;
+}
+.home h2, h3{
+    text-transform: capitalize;
+    color:var(--second-color);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:1.5rem;
+    font-weight:25px;
+    padding:2rem;
+}
+/*.hero-page a{
+    cursor:pointer;
+    text-decoration: none;
+    padding:5px;
+    margin-top:25px;
+    text-align:center;
+    border:4px solid rgb(1, 59, 121);
+    font-size:20px;
+    border-radius: 15px;
+    background:rgb(196, 204, 236);
+}*/
+
+

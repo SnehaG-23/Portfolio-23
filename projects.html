@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <style>
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: whitesmoke;
+      color: black;
+    }
+    body a{
+        color:rgb(13, 13, 13);
+        /*text-decoration: none;*/
+    }
+    .projects-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+    .projects-section h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: black;
+      text-transform: uppercase;
+    }
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgb(135, 135, 237);
+      padding: 25px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgb(243, 87, 87);
+    }
+    .project-title {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: rgb(3, 125, 173);
+    }
+    .project-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgb(63, 5, 5);
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 18px;
+      color:rgb(240, 55, 4);
+      
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <a href="index.html">Go Back</a>
+    <section class="projects-section">
+        <h1>🚀 My Projects</h1>
+
+        <div class="project-card" onclick="toggleDescription(this)">
+            <h2 class="project-title">🌙 MoodMeal – Meals that Match Your Mood</h2>
+            <p class="project-desc short">A Django + MySQL powered app that recommends meals based on your mood.</p>
+            <p class="project-desc hidden">Feeling stressed? Comfort food awaits. Excited? Something vibrant pops up. It blends psychology, design, and data into one delightful experience.</p>
+            <span class="read-more">Read More</span>
+        </div>
+
+        <div class="project-card" onclick="toggleDescription(this)">
+            <h2 class="project-title">⏳ MicroTimeline – Second-by-Second History</h2>
+            <p class="project-desc short">An interactive timeline that makes history visible down to the second.</p>
+            <p class="project-desc hidden">Instead of years or days, MicroTimeline lets you explore events second by second. Built with Django REST Framework, it’s an experiment in reimagining how we view time and stories.</p>
+            <span class="read-more">Read More</span>
+        </div>
+
+    </section>
+
+  <script>
+    function toggleDescription(card) {
+      const hiddenText = card.querySelector(".hidden");
+      const readMore = card.querySelector(".read-more");
+
+      if (hiddenText.style.display === "block") {
+        hiddenText.style.display = "none";
+        readMore.textContent = "Read More";
+      } else {
+        hiddenText.style.display = "block";
+        readMore.textContent = "Show Less";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style> 
+        html{
+            color:rgb(249, 247, 247);
+            font-size: 18px;
+            width:100%;
+            height:100vh;   
+        }
+        body a{
+            color:rgb(15, 15, 15);
+            /*text-decoration: none;*/
+        }
+        p{         
+            text-transform:capitalize;
+            text-align: justify;
+            padding-top:0.5rem;       
+        }
+        .skill{
+            margin-left:30px;
+            text-transform:capitalize;
+        }            
+        @media screen and (min-width:400px){
+            .body{ 
+                background-color: rgb(35, 3, 77);
+            }
+              h2{
+                text-align:center;
+                text-transform:uppercase;       
+            }
+            img{
+                border-radius:50px;
+                padding:2em;
+                width:70%;
+            }
+        }           
+        @media screen and (min-width:650px){
+            .body{
+                margin-left:2rem;
+                margin-right:2rem;
+                background-color:whitesmoke;
+            }
+            .body p {
+                margin:0 3rem;
+                
+            }
+            li{
+                margin:0 3rem;
+            }
+             .head-container {
+            background: rgb(8, 61, 51);
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgb(3, 146, 141);
+            padding: 25px; 
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .head-container:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgb(28, 208, 163);
+            }
+            .box-container {
+            background: rgb(61, 8, 42);
+            margin-bottom: 25px;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgb(136, 44, 106);
+            padding: 15px; 
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;          
+            }
+            .box-container:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgb(152, 5, 88);
+            }
+            .small-box-container {
+            background: rgb(149, 149, 3);
+            margin-bottom: 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgb(234, 242, 6);
+            padding: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            }
+            .small-box-container:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 35px rgb(207, 213, 6);
+            }
+        }
+        @media screen and (min-width:1150px){
+            body{
+                display:flex;
+                margin-top:3rem;
+                margin-left:25px;  
+                .head{
+                    line-height: 1.6;
+                    margin:0 0;
+                }
+                .box-container{
+                    line-height: 1.3;
+                    padding:10px 0;
+                }
+                .small-box-container{
+                    line-height: 1.8;
+                    padding:10px 0;
+                }
+                .head-container:hover {
+                    transform: translateY(15px);
+                }
+                .box-container:hover {
+                    transform: translateY(15px);
+                }
+                .small-box-container:hover {
+                    transform: translateY(15px);
+                }          
+            }
+            div{
+                  margin-left: 3rem;  
+                }
+        }   
+    </style>
+</head>
+<body class="body">
+    <a href="index.html">Go Back</a>
+    <div class="head-container">
+        <img src=".\images\about.jpeg" />
+        <div class="head-right">
+            <h2>"A bit about me"</h2>
+            <p class="head">Hi, I’m Sneha, a curious problem-solver and full-stack web developer who enjoys building ideas into digital experiences. I believe good code is not just about functionality — it’s about creating smooth, meaningful interactions that feel effortless to the user.</p>
+        </div>
+    </div>
+    <div class="box-container">
+        <p>My journey into tech started with a simple curiosity about how websites actually work — what happens behind the scenes when you click a button or submit a form. That curiosity grew into a passion for mastering both the frontend magic that users see and the backend logic that powers it all.</p>
+        <p>Today, I design and develop projects that bring together:<br></p>
+        <div class="skill">
+            <ul>
+                <li><b>Frontend skills </b>→ HTML, CSS, JavaScript, React</li>
+                <li><b>Backend skills</b> → Python, Django, Node.js</li>
+                <li><b>Databases </b>→ MySQL</li>
+                <li><b>Other tools</b> → REST APIs, Git </li>
+            </ul>
+        </div>  
+    </div>
+    <div class="small-box-container"> 
+        <p>But beyond tools and frameworks, what excites me most is solving real problems — whether it’s crafting a clean, intuitive interface, optimizing performance, or structuring databases for scalability. When I’m not coding, you’ll usually find me exploring ideas for new projects, diving into tech communities, or learning the “next thing” that challenges me to grow. I see web development as more than a career — it’s a space where creativity and logic meet, and I’m driven to keep building, learning, and pushing myself forward in this ever-changing field.</p>
+    </div>
+</body>
+</html>

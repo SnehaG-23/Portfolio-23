@@ -8,20 +8,21 @@
         body {
         margin: 0;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background:rgb(15, 1, 91);
+        background:rgb(8, 0, 53);
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 100vh;
-        width:100%;
+        width:80%;
         }
-        body a{    
+        body a{  
+            padding-top: 1rem;  
             color:White;
             /*text-decoration: none;*/
         }
         .header {
         text-align: center;
-        padding: 25px;
+        padding: 10px;
         color:transparent;
         background:linear-gradient(white 50%, rgb(10, 197, 217) 60%);
         background-clip: text;
@@ -30,15 +31,15 @@
         .header h1 {
         text-transform: uppercase;
         font-size: 30px;
-        margin: 5px;
+        margin: 25px;
         }
         .contact-container {
         width: 100%;
-        max-width: 500px;
+        min-width: 400px;
         background: rgb(227, 236, 245);
-        padding: 25px;
+        padding: 35px;
         border-radius: 15px;
-        margin: 20px;
+        margin-top: 10px;
         }
         .contact-form .form-group {
         margin-bottom: 15px;
@@ -82,70 +83,80 @@
     </style>
 </head>
 <body>
-    <a href="index.html">Go Back</a>
-    <header class="header">
-        <h1>Contact Me</h1>
-    </header>
-    <main class="contact-container">
-        <form id="contactForm" class="contact-form">
-            <div class="form-ground">
-                <label for="name"> NAME </label>
-                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-           
-            </div>
+  <a href="index.html">Go Back</a>
+  <header class="header">
+      <h1>Contact Me</h1>
+  </header>
+  <main class="footer-contact" id="footer-contact">
+    <h2>contact me</h2>
+    <section class="contact-container">
+      <form id="contactForm" class="contact-form">
+        <div class="form-ground">
+            <label for="name"> NAME </label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+            <p id="name-error"></p>
+        </div>
 
-            <div class="form-group">
-                <label for="email"> EMAIL-ID </label>
-                <input type="email" id="email" name="email" placeholder="Enter Your Email Id" required>
-            </div>
+        <div class="form-group">
+            <label for="email"> EMAIL-ID </label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email Id" required>
+            <p id="email-error"></p>
+        </div>
 
-            <div class="form-group">
-                <label for="message"> MESSAGE</label><br>
-                <textarea id="message" name="message" placeholder="Write Your Message" rows="5" required></textarea>
-
-            </div>
-
-             
-            <button type="submit" class="btn">Send Message</button>
-            <p id="formMessage" class="form-message"></p>
+        <div class="form-group">
+            <label for="message"> MESSAGE</label><br>
+            <textarea id="message" name="message" placeholder="Write Your Message" rows="5" required></textarea>
+        </div>
         
-        </form>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formMessage" class="form-message"></p>
+      
+      </form>
 
-    </main>
+    </section>
+  </main>
     
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(e) {
-        e.preventDefault(); 
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const formMessage = document.getElementById("formMessage");
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
 
+      const formMessage = document.getElementById("formMessage");
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+
+      nameError.textContent="";
+      emailError.textContent="";
+      formMessage.textContent="";
+
+      const namePattern=/^[a-zA-Z]/;
+      if (!name.match(namePattern)) {
+        nameError.textContent = "⚠ Please Enter You Name Properly";
+        nameError.style.color = "red";
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!email.match(emailPattern)) {
+        emailError.textContent = "⚠ Please enter a valid email address.";
+        emailError.style.color = "red";
+        return;
+      };
+      formMessage.textContent = "✅ Thank you! Your message has been sent.";
+      formMessage.style.color = "green";
+
+      document.getElementById("contactForm").reset();
         
-        if (!name || !email || !message) {
-            formMessage.textContent = "⚠ Please fill out all fields.";
-            formMessage.style.color = "red";
-            return;
-        }
+      console.log("Contact Form")
+      console.log("Name :", name);
+      console.log("Email Id :", email);
+      console.log("Message :", message);
 
-  
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (!email.match(emailPattern)) {
-            formMessage.textContent = "⚠ Please enter a valid email address.";
-            formMessage.style.color = "red";
-            return;
-        }
+      document.getElementById("contactForm").reset();
 
-        
-        formMessage.textContent = "✅ Thank you! Your message has been sent.";
-        formMessage.style.color = "green";
-
-
-        document.getElementById("contactForm").reset();
-        });
-        
-        console.log("Contact Form")
-    </script>
+    });
+  </script>
 </body>
 </html>

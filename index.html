@@ -8,34 +8,92 @@
     <label rel="image/icon" type="icon" href="#"></label>
 </head>
 <body>
+ 
     <header class="header">
         <div class="menu-bar">
             <label for="nav-check" class="menu-btn" ><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="34px" ><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg> </label>  
         </div>
         <input  type="checkbox" id="nav-check">    
         <div class="navigation">        
-            <div class="nav">
-                <ul class="nav-links">
-                    <li><label for="nav-check">home</label></li>
-                    <li><a href="about.html">about me</a></li>
-                    <li><a href="projects.html">projects</a></li>
-                    <li><a href="contact.html">contact</a></li>
+            <nav>
+                <label class="close-bar" for="nav-check">X</label>
+                <ul>
+                    <li class="nav-links"><a href="#">Home</a></li>
+                    <li class="nav-links"><a href="about.html">about me</a></li>
+                    <li class="nav-links"><a href="projects.html">projects</a></li>
+                    <li class="nav-links"><a href="contact.html">contact</a></li>
+                    <img src="\images\light.jpeg" id="icon"/>
                 </ul>
-            </div>     
+            </nav>     
         </div>
     </header>
-    <main class="home" id="bg-img">
+    <main class="home" id="home">
         <div class="hero-page">
             <div class="hero">
-                <h2>"Hi, I'm Sneha - I build cool tech that works"</h2>
-                <h3>"I design and build clean, efficient and impactful digital experiences - from frontend to backend systems to seamless user interfaces"</h3>
+                <h2>"Hi, I'm <i>Sneha</i> - I build cool tech that works"</h2>
+                <p>"I design and build clean, efficient and impactful digital experiences - from frontend to backend systems to seamless user interfaces"</p>
             </div>
-            
-              
+            <button id="connectbtn">Let's Connect</button>   
         </div>
-        <a href="contact.html">Let's Connect</a>
+
+        <div class="sections">
+            <section class="about-section" id="about-section">
+                <h1>about me</h1>
+                <div class="about-card">
+                    <p>Every great project begins with curiosity — and mine started the day I wondered how a simple website could connect people across the world. That question sparked my journey into web development, where I discovered the fascinating balance between creativity and logic.
+                    </p>
+                </div>
+            </section>
+            <section class="projects-section" id="projects-section">
+                <h1>🚀 My Projects</h1>
+
+                <div class="project-card">
+                    <h2 class="project-title">🌙 MoodMeal – Meals that Match Your Mood</h2>
+                    <p class="project-desc short">A Django + MySQL powered app that recommends meals based on your mood.</p>
+                    <p class="project-desc" id="hidden">Feeling stressed? Comfort food awaits. Excited? Something vibrant pops up. It blends psychology, design, and data into one delightful experience.</p>
+                    <span id="read-more">Read More</span>
+                </div>
+
+                <div class="project-card">
+                    <h2 class="project-title">⏳ MicroTimeline – Second-by-Second History</h2>
+                    <p class="project-desc short">An interactive timeline that makes history visible down to the second.</p>
+                    <p class="project-desc" id="hidden-two">Instead of years or days, MicroTimeline lets you explore events second by second. Built with Django REST Framework, it’s an experiment in reimagining how we view time and stories.</p>
+                    <span id="read-more-two">Read More</span>
+                </div>
+
+            </section>
+            <footer class="footer-contact" id="footer-contact">
+                <h2>contact me</h2>
+                <section class="contact-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-ground">
+                            <label for="name"> NAME </label>
+                            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                            <p id="name-error"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"> EMAIL-ID </label>
+                            <input type="email" id="email" name="email" placeholder="Enter Your Email Id" required>
+                            <p id="email-error"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"> MESSAGE</label><br>
+                            <textarea id="message" name="message" placeholder="Write Your Message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                        <p id="formMessage" class="form-message"></p>
+                    
+                    </form>
+
+                </section>
+            </footer>
+        </div>
+
     </main>
-    
+
     <script src="index.js" defer></script>
 </body>
 </html>
